@@ -16,9 +16,10 @@ if($called_position=="before_module_proc" && $this->module=="board")
 		'dispBoardModifyComment',
 		'dispBoardWrite',
 	);
+
 	if($logged_info->is_admin == 'Y' && in_array($this->act, $arrCheckAct)) 
 	{
-		$this->module_info->secret="Y";
+		$this->module_info->use_status="SECRET";
 	}
 }
 
