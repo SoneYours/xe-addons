@@ -8,6 +8,7 @@ if(!defined('__XE__'))
 	exit();
 
 $logged_info = Context::get('logged_info');
+$act = Context::get('act');
 
 if($called_position=="before_module_proc" && $this->module=="board")
 {
@@ -19,8 +20,9 @@ if($called_position=="before_module_proc" && $this->module=="board")
 
 	if($logged_info->is_admin == 'Y' && in_array($this->act, $arrCheckAct)) 
 	{
-		$this->module_info->use_status="SECRET";
+		$this->module_info->secret='Y';
 	}
+
 }
 
 if($called_position=="after_module_proc" && $this->module=="board")
